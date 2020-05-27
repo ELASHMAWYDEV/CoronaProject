@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
+
+
+:root {
+    --green : rgb(20, 158, 107);
+    --back : rgb(237,232,221);
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+html {
+    height: 100%;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+input {
+    font-family: 'Cairo', sans-serif;
+    outline: none;
+}
+button {
+    outline: none;
+}
+select {
+    position: relative;
+    cursor: pointer;
+}
+select::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    color: #fff;
+    position: absolute;
+    left: 8px;
+    top: 0;
+    transform: translateY(-50%);
+
+}
+
+/*------login & register page-------*/
+
+.user-box {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    width: 380px;
+    border-radius: 8px;
+    background-color: var(--back);
+    max-width: 95%;
+    padding-bottom: 10px;
+}
+.user-box > h3 {
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--green);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 30px;
+}
+.input-elements {
+    padding: 15px 20px;
+}
+.input-element {
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-element input {
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    width: 80%;
+    border: 1.5px solid transparent;
+    transition: 0.4s ease;
+}
+.input-element input:focus {
+    border: 1.5px solid var(--green);
+}
+.input-element label i {
+    font-size: 24px;
+    margin-left: 10px;
+    color: #2c3e50;
+}
+.box-text {
+    text-align: center;
+    margin-top: 30px;
+}
+.box-text a {
+    color: #fff;
+    padding: 5px 15px;
+    background-color: #3498db;
+    border-radius: 10px;
+    font-size: 12px;
+    transition: 0.4s ease;
+    display: inline-block;
+}
+.box-text a:hover {
+    background-color: #3082b9;
+}
+.box-text a:active {
+    background-color: #3498db;
+    transform: scale(0.95)
+}
+.input-element button,.input-item button {
+    color: #fff;
+    border: none;
+    background-color: var(--green);
+    cursor: pointer;
+    padding: 10px 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: 0.5s ease;
+    max-width: 90%;
+}
+.input-element button:hover,.input-item button:hover {
+    background-color: rgb(24, 134, 94);
+}
+.input-element button:active,.input-item button:active {
+    background-color: var(--green);
+    transform: scale(0.95)
+}
+.register-box {
+    width: 400px;
+}
+.input-element select,.input-item select {
+    padding: 3px;
+    /* border: 2px solid var(--green); */
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-family: 'Cairo', sans-serif;
+    width: 40%;
+    background-color: dodgerblue;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+.input-element select option,#days option {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+#days select {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Cairo', sans-serif;
+    background-color: rgb(99, 99, 99);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    margin: 0;
+    width: 80%;
+    padding: 1px;
+}
+.input-element label {
+    font-weight: 500;
+}
+button[name="register_new"] {
+    margin-top: 20px;
+}
+
+
+
+
+/*--------dashboard--------*/
+header {
+    height: 60px;
+    width: 100%;
+    background-color: var(--green);
+    color: #fff;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 0 20px;
+}
+.header-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main-container {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+}
+.container {
+    width: 100%;
+    position: relative;
+}
+.closing-side {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+.closing-side i {
+    font-size: 24px;
+    color: var(--back);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.closing-side i:hover {
+    color: #000;
+}
+.sides {
+    position: absolute;
+    transition: 0.8s ease;
+    right: -100%;
+    z-index: 10;
+    height: 100%;
+    /* overflow-y: auto; */
+}
+aside {
+    position: relative;
+    width: 300px;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    flex-wrap: nowrap;
+    
+    z-index: 5;
+    max-width: 100%;
+}
+.side-head {
+    box-shadow: -2px 0px 5px rgba(102, 102, 102, 0.582);
+}
+.side-content {
+
+    box-shadow: -2px 0px 5px rgba(102, 102, 102, 0.582);
+    right: 0;
+    border-top: 1px solid var(--back);
+    transition: 0.8s ease;
+    /* overflow-y: auto; */
+}
+.navbar-head {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    
+    width: 100%;
+    padding: 0 12px;
+}
+.user-info {
+    color: #fff;
+
+}
+/*-----burger menu-----*/
+.burger-menu {
+    margin-left: auto;
+    width: 35px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.burger-menu span {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--back);
+    border-radius: 10px;
+    transition: 0.2s ease;
+
+}
+.burger-menu:hover span {
+    background-color: #000;
+}
+.navbar-links a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.5s ease;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--back);
+}
+.navbar-links a:hover {
+    background-color: rgb(43, 199, 142);
+
+}
+.logout-btn {
+    text-align: center;
+    /* padding: 10px; */
+    margin: 30px auto;
+
+}
+.logout-btn a {
+    color: #000;
+    background-color: #fff;
+    /* border: 0.5px solid #ddd; */
+    padding: 5px 20px;
+    border-radius: 8px;
+    transition: 0.4s ease;
+    font-weight: 500;
+    font-size: 14px;
+}
+.logout-btn a:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+.alarms {
+    position: fixed;
+    top: 10px;
+    width: 600px;
+    height: auto;
+    max-width: 90%;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: alarm 1s ease 1;
+    z-index: 999;
+}
+.alarm-success, .alarm-error {
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    
+}
+@keyframes alarm {
+    0% {
+        opacity: 0;
+        top: 0;
+    }
+    100% {
+        opacity: 1;
+        top: 10px;
+    }
+}
+.alarm-success {
+    background-color: #2ecc70;
+}
+.alarm-error {
+    background-color: rgba(234, 32, 39, 0.808);
+}
+.alarm-text {
+    text-align: center;
+}
+.closing-alarm {
+    color: #000;
+    font-size: 18px;
+    margin-right: auto;
+    position: relative;
+    bottom: 10px;
+    right: 5px;
+    transition: 0.25s ease-in;
+    cursor: pointer;
+}
+.closing-alarm:hover {
+    color: #fff;
+}
+.hospital-add {
+    position: static;
+    transform: none;
+    width: 800px;
+    max-width: 95%;
+    padding-bottom: 15px;
+    margin: 30px auto;
+}
+.hospital-add .input-elements {
+    display: flex;
+    padding: 0 5px;
+}
+.hospital-add .input-element {
+    margin: 0 10px;
+    justify-content: unset;
+    width: max-content;
+}
+.hospital-add .input-element:nth-child(1) input {
+    width: 400px;
+}
+.hospital-add .input-element:nth-child(2) select {
+    width: 100%;
+}
+.hospital-add .input-element button {
+    padding: 8px 35px;
+    
+}
+
+/*----hospital table-----*/
+.table {
+    overflow-x: auto;
+}
+.hospital-table {
+    width: 800px;
+    max-width: 95%;
+    margin: 40px auto;
+    position: static;
+    transform: none;
+    padding: 0;
+    overflow-x: hidden;
+}
+.hospital-table h3 {
+    margin-bottom: 0px;
+}
+.hospital-table table td {
+    font-size: 16px;
+    padding: 5px 3px;
+    white-space: nowrap;
+}
+.hospital-table table {
+    width: 100%;
+    border: 2px solid var(--green);
+    border-collapse: collapse;
+    border-top: none;
+    border-bottom: none;
+    margin: auto;
+    text-align: center;
+    min-width: 700px;
+    overflow: scroll;
+    color: #2d3436;
+}
+.hospital-table table a {
+    color: #fff;
+    background-color: #d63031;
+    padding: 0px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.hospital-table table a:hover {
+    background-color: #000;
+}
+.hospital-table table a:active {
+    transform: scale(0.8);
+}
+.hospital-table table th,.hospital-table table td {
+    border: 2px solid var(--green);
+}
+.hospital-table table th{
+    font-size: 16px;
+    font-weight: 700;
+    border-top: none;
+    padding: 5px 6px;
+    white-space: nowrap;
+    color: rgb(48, 48, 48);
+}
+.hospital-table table tr:nth-child(even) {
+    background-color: rgb(228, 215, 184);
+}
+.hospital-table table td:nth-child(-1) {
+    border-bottom: 4px solid var(--green);
+
+}
+.hospital-table table td:nth-child(-2) {
+    border-bottom: 4px solid var(--green);
+
+}
+
+.user-settings-btn {
+    padding: 0;
+}
+.user-settings-btn a {
+    padding: 3px 50px;
+}
+
+
+/*-----user settings-----*/
+
+.user-settings-box {
+    position: static;
+    transform: none;
+    max-width: 97%;
+    width: 500px;
+    margin: 30px auto;
+}
+.user-settings-box label{
+    min-width: 150px;
+}
+.user-settings-box h4 {
+    text-align: center;
+}
+
+
+.district-container th:nth-child(2) {
+    width: 150px;
+}
+.district-container .input-element:nth-child(1) {
+    width: 80%;
+}
+.district-container .input-element:nth-child(1) input {
+    width: 100%;
+}
+.user-add {
+    position: static;
+    transform: none;
+    margin: 40px auto;
+    width: 800px;
+    max-width: 95%;
+
+}
+.add-patient-container {
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 30px;
+    background-color: var(--back);
+    
+}
+.add-patient-container input {
+    padding: 3px;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 15px;
+    max-width: 95%;
+    width: 400px;
+}
+.input-item {
+    margin: 20px 0;
+}
+.input-item label {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 180px;
+    max-width: 180px;
+    white-space: normal;
+    color: rgb(54, 54, 54);
+}
+.input-item-btn {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+input.radio {
+    max-width: 20px !important;
+
+}
+.nation-add.user-box {
+    position: static;
+    transform: none;
+    margin: 60px auto;
+}
+.nationality-table {
+    position: static;
+    transform: none;
+    margin: 60px auto;  
+    max-width: 95%;
+    margin: auto;
+    position: static;
+    transform: none;
+    padding: 0;
+    width: 400px;
+}
+.nationality-table table {
+    min-width: unset;
+}
+.nationality-table table th:nth-child(1) {
+    width: 80%;
+}
+.new-patients-table{
+    position: static !important;
+    transform: none !important;
+    width: 1200px;
+    margin: 60px auto !important;  
+    max-width: 95%;
+    margin: auto;
+    padding: 0;
+}
+.new-patients-table table td {
+    font-size: 16px;
+    padding: 5px 3px;
+    white-space: nowrap;
+}
+.new-patients-table table {
+    width: 100%;
+    border: 2px solid var(--green);
+    border-collapse: collapse;
+    border-top: none;
+    border-bottom: none;
+    margin: auto;
+    text-align: center;
+    min-width: 700px;
+    overflow: hidden;
+    color: #2d3436;
+}
+.input-item.input-item-btn a{
+    color: #fff;
+    background-color: #d63031;
+    padding: 0px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.input-item.input-item-btn a:hover {
+    background-color: #000;
+}
+.input-item-btn {
+    display: flex;
+    justify-content: center;
+}
+.teams-container {
+    margin: 60px auto;
+}
+.view-team-container {
+    background-color: var(--back);
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+}
+#datepicker {
+    cursor: pointer;
+}
+#datepicker:active {
+    background-color: #ddd;
+}
+#days-btn {
+    display: block;
+    text-align: center;
+    margin: 20px auto 0;
+    color: #fff;
+    border: none;
+    background-color: #d63031;
+    cursor: pointer;
+    padding: 10px 50px;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 6px;
+    transition: 0.5s ease;
+    max-width: 90%;
+}
+#days-btn:hover {
+    background-color: rgb(24, 134, 94);
+}
+#days-btn:active {
+    background-color: var(--green);
+    transform: scale(0.95)
+}
+.search-box {
+    width: 380px;
+    border-radius: 8px;
+    background-color: var(--back);
+    max-width: 95%;
+    padding-bottom: 10px;
+    margin: 20px auto 0;
+    
+}
+.search-box > h4 {
+    padding: 10px 0;
+    text-align: center;
+    background-color: var(--green);
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+}
+.search-box > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.input-search {
+    width: 90%;
+}
+.input-search input {
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    border: 1.5px solid transparent;
+    transition: 0.4s ease;
+    margin: 10px 0;
+    width: 100%;
+}
+.input-search input:focus {
+    border: 1.5px solid var(--green);
+}
